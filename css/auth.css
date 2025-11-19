@@ -1,0 +1,155 @@
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500&display=swap');
+
+/* ROOT COLORS */
+:root {
+    --blue: #1D4ED8;
+    --gold: #F59E0B;
+    --dark: #111827;
+    --text: #4B5563;
+    --light: #F3F4F6;
+}
+
+/* PAGE BACKGROUND */
+body {
+    background: #f8faff;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+/* CENTER WRAPPER */
+.auth-wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* CARD */
+.auth-card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 420px;
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+/* LOGO */
+.auth-logo img {
+    height: 60px;
+    margin-bottom: 5px;
+}
+
+/* HEADER */
+.auth-card h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 6px;
+}
+
+.auth-subtitle {
+    font-size: 14px;
+    color: var(--text);
+    margin-bottom: 24px;
+}
+
+/* INPUT GROUP */
+.input-group {
+    text-align: left;
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--dark);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    font-size: 15px;
+    border: 1px solid #d1d5db;
+    outline: none;
+    font-family: 'Inter', sans-serif;
+}
+
+.input-group input:focus {
+    border-color: var(--blue);
+}
+
+/* BUTTON */
+.btn-primary {
+    background: var(--blue);
+    color: #fff;
+    border: none;
+    padding: 14px 18px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.2s;
+}
+
+.btn-primary:hover {
+    background: #1740b0;
+}
+
+.full-btn {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* FOOTER */
+.auth-footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: var(--text);
+}
+
+.auth-footer a {
+    color: var(--blue);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
+
+.google-btn {
+    width: 100%;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.google-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+
+/* MOBILE */
+@media (max-width: 500px) {
+    .auth-card {
+        padding: 26px;
+    }
+}

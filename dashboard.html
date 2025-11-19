@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelBrains – Dashboard</title>
+
+    <!-- GLOBAL STYLES -->
+    <link rel="stylesheet" href="css/global.css">
+
+    <!-- DASHBOARD STYLES -->
+    <link rel="stylesheet" href="css/dashboard.css">
+
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- JS CONTROLLERS -->
+    <script src="config/env.js"></script>
+    <script type="module" src="js/dashboard.js" defer></script>
+    <script type="module" src="js/auth.js"></script>
+</head>
+
+<body>
+
+    <div class="layout">
+
+        <!-- TOPBAR (Mobile Toggle) -->
+        <div class="dash-topbar">
+            <div id="dash-menu-toggle" class="dash-toggle">☰</div>
+            <h2 class="dash-title">Dashboard</h2>
+        </div>
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="dashboard-sidebar">
+            <div class="sidebar-header">
+                <img src="images/logo.png" class="sidebar-logo">
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-link">🏠 Home</a>
+                <a href="shop.html" class="nav-link">📚 Shop</a>
+                <a href="#" class="nav-link active" id="sidebar-dashboard">📊 Dashboard</a>
+                <a href="#" class="nav-link" id="sidebar-profile">👤 Profile</a>
+                <a href="#" class="nav-link logout" onclick="logout()">🚪 Logout</a>
+            </nav>
+        </aside>
+
+        <!-- OVERLAY -->
+        <div id="dash-overlay"></div>
+
+        <!-- MAIN CONTENT -->
+        <main class="main">
+            <h1 class="page-title" id="dashboard-title">Welcome back <span id="firstname"></span></h1>
+            <div id="dashboard-content">
+                 <!-- METRICS SECTION -->
+            
+
+            </div>
+        </main>
+
+    </div>
+<!-- GLOBAL LOADING OVERLAY -->
+        <div id="loading-overlay">
+            <div class="loader"></div><br><br>
+            <h1 class="home-loader-title" style="margin-left: 5px;">Loading...</h1>
+        </div>
+</body>
+</html>

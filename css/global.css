@@ -1,0 +1,160 @@
+
+/* Global Styles for HelBrains */
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --blue: #1D4ED8;
+  --blue-light: #3B82F6;
+  --gold: #F59E0B;
+  --dark: #0F172A;
+  --text: #475569;
+  --bg: #F8FAFC;
+  --white: #ffffff;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+
+  --shadow-sm: 0 2px 6px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Body */
+body {
+  margin:0;
+  padding:0;
+  background: var(--bg);
+  font-family: 'Inter', sans-serif;
+  color: var(--dark);
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+  font-family: 'Poppins', sans-serif;
+  margin:0 0 10px 0;
+  color: var(--dark);
+}
+
+/* Buttons */
+.btn-primary {
+  background: var(--blue);
+  color: var(--white);
+  padding:12px 22px;
+  border-radius: var(--radius-md);
+  border:none;
+  cursor:pointer;
+  font-weight:600;
+  transition:0.2s;
+}
+.btn-primary:hover {
+  background: var(--blue-light);
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: var(--white);
+  padding:12px 22px;
+  border-radius: var(--radius-md);
+  border:none;
+  cursor:pointer;
+  font-weight:600;
+  transition:0.2s;
+}
+.btn-gold:hover {
+  opacity:0.9;
+}
+
+/* Inputs */
+input, select, textarea {
+  width:100%;
+  padding:12px;
+  margin-top:6px;
+  border-radius: var(--radius-sm);
+  border:1px solid #cbd5e1;
+  font-size:16px;
+}
+
+/* Container */
+.container {
+  width:90%;
+  max-width:1200px;
+  margin:auto;
+}
+
+/* Flex utility */
+.flex {
+  display:flex;
+  align-items:center;
+}
+.flex-between {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+/* GLOBAL LOADING OVERLAY */
+#loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(2px);
+    display: none;              /* hidden by default */
+    align-items: center;
+    justify-content: center;
+    z-index: 999999;            /* above EVERYTHING */
+    flex-direction: column;
+}
+
+/* Loader animation */
+.loader {
+    width: 55px;
+    height: 55px;
+    border: 5px solid #1D4ED8;      /* royal blue */
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Home page loader text animation */
+.home-loader-title {
+    margin-top: 5px;
+    font-size: 35px;
+    font-weight: 700;
+    opacity: 0;
+    animation: hl-fade 0.8s ease forwards 0.4s,
+               hl-color 3s ease-in-out infinite 1.2s,
+               hl-float 2.4s ease-in-out infinite 0.8s;
+}
+
+/* Fade-in animation */
+@keyframes hl-fade {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Color cycle (blue - gold) */
+@keyframes hl-color {
+    0%   { color: #1D4ED8; }   /* Royal Blue */
+    50%  { color: #F59E0B; }   /* Gold */
+    100% { color: #1D4ED8; }
+}
+
+/* Gentle floating effect */
+@keyframes hl-float {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-4px); }
+    100% { transform: translateY(0); }
+}
+
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+  .container { width:94%; }
+}

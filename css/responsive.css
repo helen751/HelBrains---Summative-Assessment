@@ -1,0 +1,12 @@
+
+/* RESPONSIVE FIXES */
+@media(max-width:900px){
+ .shop-grid{grid-template-columns:repeat(2,1fr);}
+ .stat-cards{grid-template-columns:1fr;}
+}
+@media(max-width:600px){
+ .shop-grid{grid-template-columns:1fr;}
+ .filters{flex-direction:column;}
+ .dashboard{flex-direction:column;}
+ .sidebar{width:100%;display:flex;overflow-x:auto;}
+}

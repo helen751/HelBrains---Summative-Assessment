@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelBrains – Login</title>
+
+    <!-- Login CSS -->
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/global.css">
+
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Env Config -->
+    <script src="config/env.js"></script>
+    <script type="module">
+    import { supabase } from "./js/supabase.js";
+
+    document.addEventListener("DOMContentLoaded", async () => {
+        const { data } = await supabase.auth.getUser();
+        if (data.user) {
+            // Already logged in → go to dashboard
+            window.location.href = "dashboard.html";
+        }
+    });
+</script>
+
+
+    <!-- Login Logic -->
+    <script type="module" src="js/auth.js" defer></script>
+</head>
+
+<body>
+
+    <div class="auth-wrapper">
+
+        <div class="auth-card">
+
+            <!-- LOGO -->
+            <div class="auth-logo">
+                <img src="images/logo.png" alt="HelBrains Logo">
+            </div>
+
+            <h2>Welcome Back</h2>
+            <p class="auth-subtitle">Log in to continue your reading journey.</p>
+
+            <!-- LOGIN FORM -->
+            <form id="login-form">
+
+                <div class="input-group">
+                    <label>Email Address</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                </div>
+
+                <button type="submit" class="btn-primary full-btn">Login</button>
+            </form>
+            <button type="button" id="google-login" class="google-btn">
+            <img src="images/google.png" alt="Google Icon">
+            Continue with Google
+        </button>
+
+
+            <p class="auth-footer">
+                Don't have an account?  
+                <a href="register.html">Create Account</a>
+            </p>
+
+        </div>
+
+    </div>
+<!-- GLOBAL LOADING OVERLAY -->
+<div id="loading-overlay">
+    <div class="loader"></div>
+</div>
+
+</body>
+</html>

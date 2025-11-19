@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelBrains – Book Discovery Platform</title>
+
+    <!-- GLOBAL & COMPONENT CSS -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/components.css">
+
+    <!-- GOOGLE FONTS ALREADY IN global.css -->
+
+    <!-- SWEETALERT2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- JS MODULES -->
+    <script src="config/env.js"></script>
+    <script type="module" src="js/api.js"></script>
+    <script type="module" src="js/utils.js"></script>
+    <script type="module" src="js/session.js"></script>
+
+    <style>
+        /* Additional local styles for this page */
+        .nav-brand {
+            font-family: 'Poppins';
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--blue);
+        }
+        nav ul {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+        nav a {
+            color: var(--dark);
+            font-weight: 500;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: var(--blue);
+        }
+
+        /* Featured book home grid override */
+        #featured-books .book-card img {
+            height: 220px;
+        }
+
+        .about-section, .contact-section {
+            padding: 60px 0;
+        }
+        .footer {
+            margin-top: 60px;
+            padding: 25px 0;
+            text-align:center;
+            background:#ffffff;
+            border-top:1px solid #e5e7eb;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">
+        <img src="images/logo.png" alt="HelBrains Logo" 
+             style="height:60px; vertical-align:middle; margin-right:8px;">
+    </a>
+    <!-- MOBILE HAMBURGER -->
+        <div class="nav-toggle" id="nav-toggle">☰</div>
+
+            <nav class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#about">About us</a></li>
+                    <li><a href="shop.html">Find a Book</a></li>
+                    <li class="tblue"><a href="login.html" id="nav-login">Login</a></li>
+                    <li class="tgold"><a href="register.html" id="nav-register">Register</a></li>
+                    <li class="tblue"><a href="dashboard.html" id="nav-dashboard" style="display:none;">Dashboard</a></li>
+                    <li class="tgold"><a href="#" id="nav-logout" style="display:none;">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- for mobile -->
+        <div id="nav-overlay"></div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Discover Your Next Favorite Book</h1>
+            <p>HelBrains helps you explore the world’s best books with powerful search, ratings, and smart discovery tools.</p>
+
+            <div class="hero-buttons">
+                <a href="shop.html">
+                    <button class="btn-gold">Find a Book</button>
+                </a>
+                <a href="#about">
+                    <button class="btn-primary">Learn More</button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- about us section -->
+    <section id="about" class="about-section container">
+    <div class="about-wrapper">
+
+        <!-- LEFT SIDE — TEXT -->
+        <div class="about-text">
+            <h2>About Us</h2>
+            <p>
+                HelBrains is an innovative book discovery platform designed to help readers 
+                explore the world’s best books with ease. Using live data from Google Books API, 
+                HelBrains brings you advanced search tools, rich book details, and seamless 
+                purchasing powered by Flutterwave.
+                <br><br>
+                Whether you're a lifelong learner or a curious explorer, HelBrains helps you 
+                discover books that inspire, educate, and empower.
+            </p>
+        </div>
+
+        <!-- RIGHT SIDE — IMAGE -->
+        <div class="about-image">
+            <img src="images/about-book1.png" alt="About HelBrains">
+        </div>
+    </div>
+</section>
+
+
+    <!-- FEATURED BOOKS SECTION -->
+    <section id="featured-books" class="featured-section">
+        <h2 class="bold">Featured Books</h2>
+        <div id="featured-grid" class="book-grid">
+            <!-- Filled by JS -->
+        </div>
+        <!-- GLOBAL LOADING OVERLAY -->
+        <div id="loading-overlay">
+            <div class="loader"></div><br><br>
+            <h1 class="home-loader-title" style="margin-left: 5px;">HELBrains</h1>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    
+
+    <!-- CONTACT SECTION -->
+<section id="contact" class="contact-section">
+    <div class="contact-wrapper container">
+
+        <div class="contact-left">
+            <h2 class="bold">Contact Us</h2>
+            <p class="contact-desc">
+                For inquiries, support, or partnership opportunities, feel free to contact us anytime. 
+                We're here to help!
+            </p>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="icon-mail"></i>
+                    <div>
+                        <p class="label">Email</p>
+                        <p class="value">support@helbrains.com</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="icon-phone"></i>
+                    <div>
+                        <p class="label">Phone</p>
+                        <p class="value">+250 700 000 000</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="icon-map"></i>
+                    <div>
+                        <p class="label">Location</p>
+                        <p class="value">Kigali, Rwanda</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-right">
+            <img src="images/contact.webp" alt="Contact Illustration">
+        </div>
+
+    </div>
+</section>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2025 HelBrains – All Rights Reserved</p>
+    </footer>
+
+    <!-- FEATURED BOOKS SCRIPT -->
+    <script type="module">
+        import { fetchFeaturedBooks } from './js/api.js';
+
+        const container = document.getElementById("featured-grid");
+
+        async function loadFeatured() {
+            const books = await fetchFeaturedBooks();
+
+            container.innerHTML = books.map(book => `
+                <div class="book-card">
+                    <img src="${book.thumbnail}">
+                    <h3 class="book-title">${book.title}</h3>
+                    <p class="book-author">${book.author}</p>
+                    <p>${book.stars}</p>
+                    <p class="book-price">RWF ${book.price}</p>
+
+                    <a href="shop.html?search=${encodeURIComponent(book.title)}">
+                        <button class="btn-primary">Find Similar</button>
+                    </a>
+                </div>
+            `).join("");
+        }
+
+
+        loadFeatured();
+    </script>
+
+<script type="module">
+    import { supabase } from "./js/supabase.js";
+    import { logout } from "./js/auth.js";
+
+    document.addEventListener("DOMContentLoaded", async () => {
+        const { data } = await supabase.auth.getUser();
+        const user = data.user;
+
+        const loginBtn = document.getElementById("nav-login");
+        const registerBtn = document.getElementById("nav-register");
+        const dashboardBtn = document.getElementById("nav-dashboard");
+        const logoutBtn = document.getElementById("nav-logout");
+
+        if (user) {
+            // User is logged in
+            if (loginBtn) loginBtn.style.display = "none";
+            if (registerBtn) registerBtn.style.display = "none";
+
+            if (dashboardBtn) dashboardBtn.style.display = "inline-block";
+            if (logoutBtn) logoutBtn.style.display = "inline-block";
+
+            // Attach logout click
+            if (logoutBtn) logoutBtn.addEventListener("click", (e) => {
+                e.preventDefault();
+                logout();
+            });
+
+        } else {
+            // User NOT logged in
+            if (dashboardBtn) dashboardBtn.style.display = "none";
+            if (logoutBtn) logoutBtn.style.display = "none";
+
+            if (loginBtn) loginBtn.style.display = "inline-block";
+            if (registerBtn) registerBtn.style.display = "inline-block";
+        }
+    });
+</script>
+
+</body>
+</html>
