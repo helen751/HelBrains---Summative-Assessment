@@ -6,7 +6,7 @@ export async function sendReceiptEmail(book, email) {
         to_email: email,
         book_title: book.title,
         book_author: book.author,
-        book_price: book.price,
+        book_price: book.price.toLocaleString("en-US"),
         book_description: book.description,
         book_thumbnail: book.thumbnail,
         purchase_date: new Date().toLocaleString(),
