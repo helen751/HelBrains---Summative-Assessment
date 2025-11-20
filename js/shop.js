@@ -3,7 +3,7 @@ import { supabase } from "./supabase.js";
 //send email api
 import { sendReceiptEmail } from "./email.js";
 //utils js
-import { showLoader, hideLoader } from "./utils.js";
+import { showLoader, hideLoader, truncateText, generateStars, formatPrice } from "./utils.js";
 
 
 /* GLOBAL STATE */
@@ -117,7 +117,7 @@ function renderBooks() {
                         '${b.author.replace(/'/g, "\\'")}',
                         '${b.thumbnail}',
                         '${b.description.replace(/'/g, "\\'")}',
-                        ${b.price}
+                        ${formatPrice(b.rating, b.year)}
                     )">
                     Buy Now
                 </button>
@@ -227,10 +227,10 @@ window.buyBook = async function (id, title, author, thumb, desc, price) {
             if (paymentSuccess && savedBook) {
                 Swal.fire({
                     icon: "success",
-                    title: "Payment Successful!",
+                    title: "Payment Successful and Email sent!",
                     html: `
                         <p style="margin-top:8px;margin-bottom:14px;">
-                            <strong>${savedBook.title}</strong> has been added to your library.
+                            <strong>${savedBook.title}</strong> has been added to your library. A receipt has been sent to your email.
                         </p>
                     `,
                     showCancelButton: true,
@@ -241,7 +241,7 @@ window.buyBook = async function (id, title, author, thumb, desc, price) {
                     if (result.isConfirmed) {
                         window.location.href = "dashboard.html";
                     } else {
-                        window.location.href = "shop.html";
+                        window.location.href = "#";
                     }
                 });
             }
