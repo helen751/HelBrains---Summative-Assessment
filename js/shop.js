@@ -52,7 +52,7 @@ async function fetchBooks(query) {
             const info = b.volumeInfo;
             const year = info.publishedDate ? info.publishedDate.substring(0, 4) : null;
             const rating = info.averageRating || 0;
-            const price = rating === 0 ? 1500 : 1500 + rating * 400;
+            const price = formatPrice(rating, year);
 
             return {
                 id: b.id,
@@ -117,7 +117,7 @@ function renderBooks() {
                         '${b.author.replace(/'/g, "\\'")}',
                         '${b.thumbnail}',
                         '${b.description.replace(/'/g, "\\'")}',
-                        ${formatPrice(b.rating, b.year)}
+                        ${b.price}
                     )">
                     Buy Now
                 </button>
