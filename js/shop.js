@@ -52,7 +52,7 @@ async function fetchBooks(query) {
             const info = b.volumeInfo;
             const year = info.publishedDate ? info.publishedDate.substring(0, 4) : null;
             const rating = info.averageRating || 0;
-            const price = (5 + (rating * 10) * (year >= 2000 ? 500 : 200))
+            const price = (5 + (rating > 0 ? rating * 10 : 50)) * (year >= 2000 ? 50 : 20);
 
             return {
                 id: b.id,
