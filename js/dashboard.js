@@ -59,7 +59,7 @@ export async function getCurrentUser() {
         lastname: profile?.lastname,
         email: profile?.email,
         id: authUser.id,
-        last_login: profile?.updated_at || null,
+        last_login: authUser.last_sign_in_at || null,
     };
 }
 
