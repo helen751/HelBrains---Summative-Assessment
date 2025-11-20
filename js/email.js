@@ -1,5 +1,5 @@
 emailjs.init({
-    publicKey: "",
+    publicKey: window.ENV.EMAILJS_PUBLIC_KEY,
 });
 export async function sendReceiptEmail(book, email) {
     const templateParams = {
@@ -33,5 +33,5 @@ export async function sendReceiptEmail(book, email) {
         `
     };
 
-    emailjs.send("", "", templateParams);
+    emailjs.send(window.ENV.EMAILJS_SERVICE_ID, window.ENV.EMAILJS_TEMPLATE_ID, templateParams);
 }
