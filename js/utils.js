@@ -17,7 +17,7 @@ export function generateStars(rating = 0) {
 }
 
 export function formatPrice(rating = 0, year = 0) {
-    return (5 + (rating > 0 ? rating * 10 : 50)) * (year >= 2000 ? 50 : 20).toLocaleString("en-US");
+    return ((5 + (rating > 0 ? rating * 10 : 50)) * (year >= 2000 ? 50 : 20)).toLocaleString("en-US");
 }
 
 export function getQueryParam(key) {
