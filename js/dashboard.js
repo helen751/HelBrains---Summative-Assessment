@@ -58,7 +58,8 @@ export async function getCurrentUser() {
         firstname: profile?.firstname,
         lastname: profile?.lastname,
         email: profile?.email,
-        id: authUser.id
+        id: authUser.id,
+        last_login: profile?.updated_at || null,
     };
 }
 
@@ -124,6 +125,11 @@ export async function loadDashboardHome(user_id) {
                 <h3>Total Books</h3>
                 <p id="total-books">0 Books</p>
             </div>
+
+            <div class="metric-card">
+                <h3>Last Logged in</h3>
+                <p id="last-logged-in">${user.last_login ? new Date(user.last_login).toLocaleString() : "N/A"}</p>
+            </div>
         </div>
 
         <h2 class="section-title">Purchased Books</h2>
@@ -188,7 +194,7 @@ async function loadPurchases(user_id) {
         `;
     });
 
-    spentEl.textContent = `RWF ${totalSpent}`;
+    spentEl.textContent = `RWF ${totalSpent.toLocaleString("en-US")}`;
     booksEl.textContent = `${data.length} Books`;
 }
 

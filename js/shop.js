@@ -107,7 +107,7 @@ function renderBooks() {
                     <h3>${b.title}</h3>
                     <p><strong>Author:</strong> ${b.author}</p>
                     <p><strong>Year:</strong> ${b.year || "N/A"}</p>
-                    <p class="book-price">RWF ${b.price}</p>
+                    <p class="book-price">RWF ${b.price.toLocaleString("en-US")}</p>
                 </div>
 
                 <button class="buy-btn"
