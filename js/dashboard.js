@@ -7,48 +7,51 @@ await new Promise(resolve => setTimeout(resolve, 100));
 // Global profile storage
 let user = {};
 
-/* AUTO SYNC GOOGLE USER INTO helbrains_users table on supabase */
+/* AUTO SYNC GOOGLE USER INTO helbrains_users table on supabase */// AUTO SYNC GOOGLE USER
 supabase.auth.onAuthStateChange(async (event, session) => {
     if (!session?.user) return;
 
-    const authUser = session.user;
+    const u = session.user;
 
-    // Get name fields
-    const fullName = authUser.user_metadata?.full_name 
-        || authUser.user_metadata?.name
-        || authUser.user_metadata?.fullName
-        || authUser.user_metadata?.display_name
-        || authUser.user_metadata?.given_name + " " + authUser.user_metadata?.family_name
-        || "";
+    // Extract name from Google metadata
+    const fullName =
+        u.user_metadata?.full_name ||
+        u.user_metadata?.name ||
+        u.user_metadata?.given_name + " " + u.user_metadata?.family_name ||
+        "";
 
     const firstname = fullName.split(" ")[0] || "User";
     const lastname  = fullName.split(" ").slice(1).join(" ") || "";
 
-    // Check your custom table
-    const { data:existing, error: insertError } = await supabase
-    .from("helbrains_users")
-    .insert({
-        id: authUser.id,
-        firstname,
-        lastname,
-        email: authUser.email
-    });
+    // Check if exists
+    const { data: existing, error: fetchErr } = await supabase
+        .from("helbrains_users")
+        .select("id")
+        .eq("id", u.id)
+        .maybeSingle();
 
-if (insertError) {
-    console.error("INSERT ERROR:", insertError);
-}
+    if (fetchErr) console.error("SYNC FETCH ERROR:", fetchErr);
 
-    // Insert if missing
+    // INSERT only if missing
     if (!existing) {
-        await supabase.from("helbrains_users").insert({
-            id: authUser.id,
+        const { error: insertErr } = await supabase.from("helbrains_users").insert({
+            id: u.id,
             firstname,
             lastname,
-            email: authUser.email
+            email: u.email,
+            password: null   // ⭐ password is NULL for Google users
         });
-        console.log("Google user inserted into helbrains_users");
+
+        if (insertErr) {
+            console.error("INSERT ERROR:", insertErr);
+        } else {
+            console.log("Google user inserted → helbrains_users");
+        }
+    } else {
+        console.log("Google user already exists → no insert");
     }
 });
+
 
 
 
