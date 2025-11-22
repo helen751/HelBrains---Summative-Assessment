@@ -2,33 +2,36 @@
 import { supabase } from "./supabase.js";
 import { showLoader, hideLoader } from "./utils.js";
 
+await new Promise(resolve => setTimeout(resolve, 100)); 
+
 // Global profile storage
 let user = {};
 
 /* AUTO SYNC GOOGLE USER INTO helbrains_users table on supabase */
-async function syncGoogleUser() {
-    const { data, error } = await supabase.auth.getUser();
-    if (error || !data?.user) return;
+supabase.auth.onAuthStateChange(async (event, session) => {
+    if (!session?.user) return;
 
-    const authUser = data.user;
+    const authUser = session.user;
 
-    // Get the full name from Supabase auth.users
-    const fullName = authUser?.user_metadata?.full_name 
-                  || authUser?.user_metadata?.name 
-                  || authUser?.display_name 
-                  || "";
+    // Get name fields
+    const fullName = authUser.user_metadata?.full_name 
+        || authUser.user_metadata?.name
+        || authUser.user_metadata?.fullName
+        || authUser.user_metadata?.display_name
+        || authUser.user_metadata?.given_name + " " + authUser.user_metadata?.family_name
+        || "";
 
     const firstname = fullName.split(" ")[0] || "User";
-    const lastname = fullName.split(" ").slice(1).join(" ") || "";
+    const lastname  = fullName.split(" ").slice(1).join(" ") || "";
 
-    // Check if record exists in your custom table
-    const { data: existing } = await supabase
+    // Check your custom table
+    const { data: existing, error } = await supabase
         .from("helbrains_users")
-        .select("*")
+        .select("id")
         .eq("id", authUser.id)
         .maybeSingle();
 
-    // If not exist, insert new record
+    // Insert if missing
     if (!existing) {
         await supabase.from("helbrains_users").insert({
             id: authUser.id,
@@ -36,14 +39,11 @@ async function syncGoogleUser() {
             lastname,
             email: authUser.email
         });
-
-        console.log("Inserted Google user → helbrains_users");
-    } else {
-        console.log("User already exists → helbrains_users");
+        console.log("Google user inserted into helbrains_users");
     }
-}
+});
 
-syncGoogleUser();
+
 
 
 /* GET CURRENT AUTH USER */
