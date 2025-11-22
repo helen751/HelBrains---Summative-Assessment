@@ -8,7 +8,8 @@ await new Promise(resolve => setTimeout(resolve, 100));
 let user = {};
 
 /* AUTO SYNC GOOGLE USER INTO helbrains_users table on supabase */// AUTO SYNC GOOGLE USER
-supabase.auth.onAuthStateChange(async (event, session) => {
+async function syncGoogleUser() {
+    const { data: { session } } = await supabase.auth.getSession();
     if (!session?.user) return;
 
     const u = session.user;
@@ -17,11 +18,11 @@ supabase.auth.onAuthStateChange(async (event, session) => {
     const fullName =
         u.user_metadata?.full_name ||
         u.user_metadata?.name ||
-        u.user_metadata?.given_name + " " + u.user_metadata?.family_name ||
+        `${u.user_metadata?.given_name || ""} ${u.user_metadata?.family_name || ""}`.trim() ||
         "";
 
     const firstname = fullName.split(" ")[0] || "User";
-    const lastname  = fullName.split(" ").slice(1).join(" ") || "";
+    const lastname  = fullName.split(" ").slice(1).join(" ");
 
     // Check if exists
     const { data: existing, error: fetchErr } = await supabase
@@ -32,14 +33,13 @@ supabase.auth.onAuthStateChange(async (event, session) => {
 
     if (fetchErr) console.error("SYNC FETCH ERROR:", fetchErr);
 
-    // INSERT only if missing
     if (!existing) {
         const { error: insertErr } = await supabase.from("helbrains_users").insert({
             id: u.id,
             firstname,
             lastname,
             email: u.email,
-            password: null   // ⭐ password is NULL for Google users
+            password: null
         });
 
         if (insertErr) {
@@ -50,9 +50,7 @@ supabase.auth.onAuthStateChange(async (event, session) => {
     } else {
         console.log("Google user already exists → no insert");
     }
-});
-
-
+}
 
 
 
@@ -87,6 +85,9 @@ export async function getCurrentUser() {
  */
 document.addEventListener("DOMContentLoaded", async () => {
     showLoader();
+    
+    await syncGoogleUser();
+
     user = await getCurrentUser()
 
     if (!user) {
