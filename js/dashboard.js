@@ -25,11 +25,18 @@ supabase.auth.onAuthStateChange(async (event, session) => {
     const lastname  = fullName.split(" ").slice(1).join(" ") || "";
 
     // Check your custom table
-    const { data: existing, error } = await supabase
-        .from("helbrains_users")
-        .select("id")
-        .eq("id", authUser.id)
-        .maybeSingle();
+    const { error: insertError } = await supabase
+    .from("helbrains_users")
+    .insert({
+        id: authUser.id,
+        firstname,
+        lastname,
+        email: authUser.email
+    });
+
+if (insertError) {
+    console.error("INSERT ERROR:", insertError);
+}
 
     // Insert if missing
     if (!existing) {
