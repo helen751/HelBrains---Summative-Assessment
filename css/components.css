@@ -411,4 +411,7 @@
   .hero h1{
     font-size:32px;
   }
+  .book-card img{
+    width: 60%;
+  }
 }
