@@ -5,33 +5,41 @@ import { showLoader, hideLoader } from "./utils.js";
 // Global profile storage
 let user = {};
 
-/* AUTO SYNC GOOGLE USER INTO helbrains_users */
+/* AUTO SYNC GOOGLE USER INTO helbrains_users table on supabase */
 async function syncGoogleUser() {
-    const { data } = await supabase.auth.getUser();
-    const user = data.user;
+    const { data, error } = await supabase.auth.getUser();
+    if (error || !data?.user) return;
 
-    if (!user) return;
+    const authUser = data.user;
 
-    // Get name pieces safely
-    const fullname = user.user_metadata.full_name || "";
-    const firstname = fullname.split(" ")[0] || "User";
-    const lastname = fullname.split(" ")[1] || "";
+    // Get the full name from Supabase auth.users
+    const fullName = authUser?.user_metadata?.full_name 
+                  || authUser?.user_metadata?.name 
+                  || authUser?.display_name 
+                  || "";
 
-    // Check if user exists
-    const { data: exists } = await supabase
+    const firstname = fullName.split(" ")[0] || "User";
+    const lastname = fullName.split(" ").slice(1).join(" ") || "";
+
+    // Check if record exists in your custom table
+    const { data: existing } = await supabase
         .from("helbrains_users")
-        .select("id")
-        .eq("id", user.id)
-        .single();
+        .select("*")
+        .eq("id", authUser.id)
+        .maybeSingle();
 
-    // If not exist → create
-    if (!exists) {
+    // If not exist, insert new record
+    if (!existing) {
         await supabase.from("helbrains_users").insert({
-            id: user.id,
+            id: authUser.id,
             firstname,
             lastname,
-            email: user.email
+            email: authUser.email
         });
+
+        console.log("Inserted Google user → helbrains_users");
+    } else {
+        console.log("User already exists → helbrains_users");
     }
 }
 
@@ -277,24 +285,36 @@ async function loadProfile() {
     });
 }
 
-/* DASHBOARD RESPONSIVE SIDEBAR */
-const dashToggle = document.getElementById("dash-menu-toggle");
-const sidebar = document.getElementById("dashboard-sidebar");
-const dashOverlay = document.getElementById("dash-overlay");
+/* RESPONSIVE SIDEBAR TOGGLE */
 
-if (dashToggle) {
-    dashToggle.addEventListener("click", () => {
-        sidebar.classList.add("show");
-        dashOverlay.classList.add("show");
-    });
-}
+document.addEventListener("DOMContentLoaded", () => {
+    const sidebar = document.getElementById("dashboard-sidebar");
+    const overlay = document.getElementById("dash-overlay");
+    const menuToggle = document.getElementById("dash-menu-toggle");
 
-if (dashOverlay) {
-    dashOverlay.addEventListener("click", () => {
-        sidebar.classList.remove("show");
-        dashOverlay.classList.remove("show");
+    // Open sidebar
+    menuToggle.addEventListener("click", () => {
+        sidebar.classList.add("open");
+        overlay.classList.add("show");
+        document.body.style.overflow = "hidden";
     });
-}
+
+    // Close sidebar when clicking overlay
+    overlay.addEventListener("click", () => {
+        sidebar.classList.remove("open");
+        overlay.classList.remove("show");
+        document.body.style.overflow = "";
+    });
+
+    // Close with Esc key
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+            sidebar.classList.remove("open");
+            overlay.classList.remove("show");
+            document.body.style.overflow = "";
+        }
+    });
+});
 
 
 
