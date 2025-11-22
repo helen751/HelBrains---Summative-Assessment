@@ -2,7 +2,6 @@
 import { supabase } from "./supabase.js";
 import { showLoader, hideLoader } from "./utils.js";
 
-await new Promise(resolve => setTimeout(resolve, 100)); 
 
 // Global profile storage
 let user = {};
@@ -85,7 +84,7 @@ export async function getCurrentUser() {
  */
 document.addEventListener("DOMContentLoaded", async () => {
     showLoader();
-    
+
     await syncGoogleUser();
 
     user = await getCurrentUser()
