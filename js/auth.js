@@ -29,6 +29,11 @@ if (registerForm) {
             submitBtn.innerHTML = originalText;
             return Swal.fire("Missing Fields", "Please fill all fields.", "warning");
         }
+        else if (password.length < 6) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalText;
+            return Swal.fire("Weak Password", "Password must be at least 6 characters.", "warning");
+        }
 
         // Create Supabase Auth user
         const { data: authData, error: authError } = await supabase.auth.signUp({
