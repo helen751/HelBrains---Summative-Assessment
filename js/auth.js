@@ -128,7 +128,7 @@ if (loginForm) {
             return Swal.fire("Login Failed", "Incorrect email or password.", "error");
         }
 
-        // 2️⃣ Get user's firstname from helbrains_users
+        // Get user's firstname from helbrains_users
         const user_id = loginData.user.id;
 
         const { data: userRow, error: fetchError } = await supabase
@@ -143,7 +143,7 @@ if (loginForm) {
             firstname = userRow.firstname;
         }
 
-        // 3️⃣ Success message with firstname
+        // Success message with firstname
         Swal.fire({
             title: `Welcome back, ${firstname}!`,
             text: "You will be redirected to your dashboard shortly.",

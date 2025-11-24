@@ -1,6 +1,9 @@
+//initializing the email JS API
 emailjs.init({
     publicKey: window.ENV.EMAILJS_PUBLIC_KEY,
 });
+
+// SEND RECEIPT EMAIL
 export async function sendReceiptEmail(book, email) {
     const templateParams = {
         to_email: email,

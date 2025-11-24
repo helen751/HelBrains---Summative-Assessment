@@ -7,6 +7,7 @@ export function truncateText(text, limit = 50) {
     return words.length > limit ? words.slice(0, limit).join(" ") + "..." : text;
 }
 
+//function to generate starts based on number of ratings
 export function generateStars(rating = 0) {
     let stars = "";
     const full = Math.floor(rating);
@@ -16,10 +17,12 @@ export function generateStars(rating = 0) {
     return stars || "No rating";
 }
 
+//function to format price based on rating and year
 export function formatPrice(rating = 0, year = 0) {
     return ((5 + (rating > 0 ? rating * 10 : 50)) * (year >= 2000 ? 50 : 20)).toLocaleString("en-US");
 }
 
+//function to get query param from URL
 export function getQueryParam(key) {
     const params = new URLSearchParams(window.location.search);
     return params.get(key);
@@ -38,7 +41,7 @@ export function hideLoader() {
     document.getElementById("loading-overlay").style.display = "none";
 }
 
-/* RESPONSIVE NAV TOGGLE */
+/* RESPONSIVE NAV TOGGLE for mobile */
 const toggleBtn = document.getElementById("nav-toggle");
 const navMenu   = document.getElementById("nav-menu");
 const navOverlay = document.getElementById("nav-overlay");

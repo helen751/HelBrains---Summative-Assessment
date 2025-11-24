@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 /* 
-   SET ACTIVE SIDEBAR LINK
+   SET ACTIVE SIDEBAR LINKs
  */
 function setActiveSidebar(activeId) {
     document.querySelectorAll(".nav-link").forEach(item => {

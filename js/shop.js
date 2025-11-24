@@ -1,4 +1,6 @@
 // Bookstore Controller
+
+//import supabase js to check if a user is logged in
 import { supabase } from "./supabase.js";
 //send email api
 import { sendReceiptEmail } from "./email.js";

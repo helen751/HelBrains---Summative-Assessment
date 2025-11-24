@@ -1,4 +1,4 @@
-
+// LOAD SESSION USER INFO
 import { getCurrentUser } from './supabase.js';
 
 export async function loadSession() {
