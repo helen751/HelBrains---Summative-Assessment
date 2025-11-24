@@ -2,7 +2,7 @@
 A complete full‑stack bookstore web application built for ALU’s Summative Assessment.  
 This project demonstrates **Use of Multiple APIs, User authentication, payment processing, database CRUD, CI/CD deployment, and responsive UI development**.
 
-## <a href="">Watch Demo Video</a>
+## <a href="https://youtu.be/qklAhbgncY8">Watch Demo Video</a>
 ## <a href="https://helenbot.tech">Visit website via the Load balancer</a>
 ---
 
