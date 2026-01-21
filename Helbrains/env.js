@@ -1,0 +1,8 @@
+window.ENV = {
+  SUPABASE_URL: "https://lnrfkgdniiamgujptczq.supabase.co",
+  SUPABASE_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxucmZrZ2RuaWlhbWd1anB0Y3pxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM0ODMyMjksImV4cCI6MjA3OTA1OTIyOX0.OKZHv8ebhhLY2a_a2ZrScevOvSi__fER8Ij9TqrU2LE",
+  EMAILJS_PUBLIC_KEY: "Sd2JlDEa-A0biWBO2",
+  EMAILJS_SERVICE_ID: "service_gea9hfn",
+  EMAILJS_TEMPLATE_ID: "template_do6erst",
+  FLW_PUBLIC_KEY: "FLWPUBK_TEST-b14d098721d46f22f42ee5986cbed096-X"
+};

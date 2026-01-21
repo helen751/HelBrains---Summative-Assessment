@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" aria-label="Email icon">
+  <!-- Envelope body -->
+  <rect x="72" y="132" width="368" height="248" rx="44" fill="#0F172A"></rect>
+  <!-- Envelope flap -->
+  <path d="M92 160l164 124c0 0 0 0 0 0s0 0 0 0L420 160" fill="none" stroke="#FFFFFF" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"></path>
+  <!-- Inner folds -->
+  <path d="M92 356l138-120" fill="none" stroke="#FFFFFF" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"></path>
+  <path d="M420 356L282 236" fill="none" stroke="#FFFFFF" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"></path>
+  <!-- Top edge line -->
+  <path d="M72 184v152c0 24 20 44 44 44h280c24 0 44-20 44-44V184" fill="none" stroke="#FFFFFF" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
