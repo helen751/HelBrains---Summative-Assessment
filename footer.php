@@ -31,7 +31,7 @@
                   </div>
                   <div class="text">
                     <h3>Subscribe now</h3>
-                    <a href="https://youtube.com/@helen_codeadict">Helen Codeadict</a>
+                    <a href="https://youtube.com/@helen_codeaddict">Helen Codeadict</a>
                     <p>Watch my tech contents</p>
                   </div>
                 </div>

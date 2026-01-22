@@ -62,7 +62,7 @@
                     <div class="col-xl-4 col-md-6">
                         <div class="projects_section_single fade_left" data-trigerId="blogs">
                         <a href="javascript:void(0)" class="projects_section_img js-open-image" data-cursor="read <br> more">
-                            <img src="images/trainings/devfest1.webp" alt="Helen Okereke" class="img-fluid w-100" />
+                            <img src="images/trainings/devfest1.webp" alt="Helen Okereke" class="img-fluid w-100" loading="lazy" decoding="async"/>
                         </a>
                         <div class="projects_section_text">
                             <span>December, 2022</span>
@@ -79,7 +79,7 @@
                     <div class="col-xl-4 col-md-6">
                         <div class="projects_section_single fade_left" data-trigerId="blogs">
                         <a href="javascript:void(0)" class="projects_section_img js-open-image" data-cursor="read <br> more">
-                            <img src="images/trainings/us2.webp" alt="Helen Okereke" class="img-fluid w-100" />
+                            <img src="images/trainings/us2.webp" alt="Helen Okereke" class="img-fluid w-100" loading="lazy" decoding="async"/>
                         </a>
                         <div class="projects_section_text">
                             <span>May, 2025</span>
@@ -96,7 +96,7 @@
                     <div class="col-xl-4 col-md-6">
                         <div class="projects_section_single fade_left" data-trigerId="blogs">
                         <a href="javascript:void(0)" class="projects_section_img js-open-image" data-cursor="read <br> more">
-                            <img src="images/trainings/xpai.webp" alt="Helen Okereke" class="img-fluid w-100" />
+                            <img src="images/trainings/xpai.webp" alt="Helen Okereke" class="img-fluid w-100" loading="lazy" decoding="async"/>
                         </a>
                         <div class="projects_section_text">
                             <span>October, 2024</span>
@@ -114,7 +114,7 @@
                     <div class="col-xl-4 col-md-6">
                         <div class="projects_section_single fade_left" data-trigerId="blogs">
                         <a href="javascript:void(0)" class="projects_section_img js-open-image" data-cursor="read <br> more">
-                            <img src="images/trainings/children1.webp" alt="Helen Okereke" class="img-fluid w-100" />
+                            <img src="images/trainings/children1.webp" alt="Helen Okereke" class="img-fluid w-100" loading="lazy" decoding="async"/>
                         </a>
                         <div class="projects_section_text">
                             <span>December, 2023</span>
@@ -132,7 +132,7 @@
                     <div class="col-xl-4 col-md-6">
                         <div class="projects_section_single fade_left" data-trigerId="blogs">
                         <a href="javascript:void(0)" class="projects_section_img js-open-image" data-cursor="read <br> more">
-                            <img src="images/trainings/us4.webp" alt="Helen Okereke" class="img-fluid w-100" />
+                            <img src="images/trainings/us4.webp" alt="Helen Okereke" class="img-fluid w-100" loading="lazy" decoding="async"/>
                         </a>
                         <div class="projects_section_text">
                             <span>August, 2025</span>
@@ -150,7 +150,7 @@
                     <div class="col-xl-4 col-md-6">
                         <div class="projects_section_single fade_left" data-trigerId="blogs">
                         <a href="javascript:void(0)" class="projects_section_img js-open-image" data-cursor="read <br> more">
-                            <img src="images/trainings/children2.webp" alt="Helen Okereke" class="img-fluid w-100" />
+                            <img src="images/trainings/children2.webp" alt="Helen Okereke" class="img-fluid w-100" loading="lazy" decoding="async"/>
                         </a>
                         <div class="projects_section_text">
                             <span>August, 2024</span>
@@ -168,7 +168,7 @@
                     <div class="col-xl-4 col-md-6">
                         <div class="projects_section_single fade_left" data-trigerId="blogs">
                         <a href="javascript:void(0)" class="projects_section_img js-open-image" data-cursor="read <br> more">
-                            <img src="images/trainings/devfest2.webp" alt="Helen Okereke" class="img-fluid w-100" />
+                            <img src="images/trainings/devfest2.webp" alt="Helen Okereke" class="img-fluid w-100" loading="lazy" decoding="async"/>
                         </a>
                         <div class="projects_section_text">
                             <span>December, 2022</span>
@@ -186,7 +186,7 @@
                     <div class="col-xl-4 col-md-6">
                         <div class="projects_section_single fade_left" data-trigerId="blogs">
                         <a href="javascript:void(0)" class="projects_section_img js-open-image" data-cursor="read <br> more">
-                            <img src="images/trainings/devfest3.webp" alt="Helen Okereke" class="img-fluid w-100" />
+                            <img src="images/trainings/devfest3.webp" alt="Helen Okereke" class="img-fluid w-100" loading="lazy" decoding="async"/>
                         </a>
                         <div class="projects_section_text">
                             <span>December, 2022</span>
@@ -204,7 +204,7 @@
                     <div class="col-xl-4 col-md-6">
                         <div class="projects_section_single fade_left" data-trigerId="blogs">
                         <a href="javascript:void(0)" class="projects_section_img js-open-image" data-cursor="read <br> more">
-                            <img src="images/trainings/robclub-c.png" alt="Helen Okereke" class="img-fluid w-100" />
+                            <img src="images/trainings/robclub-c.png" alt="Helen Okereke" class="img-fluid w-100" loading="lazy" decoding="async"/>
                         </a>
                         <div class="projects_section_text">
                             <span>October, 2025</span>
@@ -231,7 +231,7 @@
                     <div class="col-xl-4 col-md-6">
                         <div class="projects_section_single fade_left" data-trigerId="blogs">
                         <a href="javascript:void(0)" class="projects_section_img js-open-image" data-cursor="read <br> more">
-                            <img src="images/trainings/ahc3.webp" alt="Helen Okereke" class="img-fluid w-100" />
+                            <img src="images/trainings/ahc3.webp" alt="Helen Okereke" class="img-fluid w-100" loading="lazy" decoding="async"/>
                         </a>
                         <div class="projects_section_text">
                             <span>October, 2023</span>
@@ -249,7 +249,7 @@
                     <div class="col-xl-4 col-md-6">
                         <div class="projects_section_single fade_left" data-trigerId="blogs">
                         <a href="javascript:void(0)" class="projects_section_img js-open-image" data-cursor="read <br> more">
-                            <img src="images/trainings/afyafest-award.webp" alt="L-Guard Ltd" class="img-fluid w-100" />
+                            <img src="images/trainings/afyafest-award.webp" alt="L-Guard Ltd" class="img-fluid w-100" loading="lazy" decoding="async"/>
                         </a>
                         <div class="projects_section_text">
                             <span>August, 2025</span>
@@ -267,7 +267,7 @@
                     <div class="col-xl-4 col-md-6">
                         <div class="projects_section_single fade_left" data-trigerId="blogs">
                         <a href="javascript:void(0)" class="projects_section_img js-open-image" data-cursor="read <br> more">
-                            <img src="images/trainings/afyafest1.webp" alt="Helen Okereke" class="img-fluid w-100" />
+                            <img src="images/trainings/afyafest1.webp" alt="Helen Okereke" class="img-fluid w-100" loading="lazy" decoding="async"/>
                         </a>
                         <div class="projects_section_text">
                             <span>August, 2025</span>
@@ -284,7 +284,7 @@
                     <div class="col-xl-4 col-md-6">
                         <div class="projects_section_single fade_left" data-trigerId="blogs">
                         <a href="javascript:void(0)" class="projects_section_img js-open-image" data-cursor="read <br> more">
-                            <img src="images/trainings/afyafest2.webp" alt="Helen Okereke" class="img-fluid w-100" />
+                            <img src="images/trainings/afyafest2.webp" alt="Helen Okereke" class="img-fluid w-100" loading="lazy" decoding="async"/>
                         </a>
                         <div class="projects_section_text">
                             <span>August, 2025</span>
@@ -301,7 +301,7 @@
                     <div class="col-xl-4 col-md-6">
                         <div class="projects_section_single fade_left" data-trigerId="blogs">
                         <a href="javascript:void(0)" class="projects_section_img js-open-image" data-cursor="read <br> more">
-                            <img src="images/trainings/ahc1.webp" alt="Helen Okereke" class="img-fluid w-100" />
+                            <img src="images/trainings/ahc1.webp" alt="Helen Okereke" class="img-fluid w-100" loading="lazy" decoding="async"/>
                         </a>
                         <div class="projects_section_text">
                             <span>October, 2025</span>
@@ -319,7 +319,7 @@
                     <div class="col-xl-4 col-md-6">
                         <div class="projects_section_single fade_left" data-trigerId="blogs">
                         <a href="javascript:void(0)" class="projects_section_img js-open-image" data-cursor="read <br> more">
-                            <img src="images/trainings/us5.webp" alt="Helen Okereke" class="img-fluid w-100" />
+                            <img src="images/trainings/us5.webp" alt="Helen Okereke" class="img-fluid w-100" loading="lazy" decoding="async"/>
                         </a>
                         <div class="projects_section_text">
                             <span>October, 2025</span>
@@ -337,7 +337,7 @@
                     <div class="col-xl-4 col-md-6">
                         <div class="projects_section_single fade_left" data-trigerId="blogs">
                         <a href="javascript:void(0)" class="projects_section_img js-open-image" data-cursor="read <br> more">
-                            <img src="images/trainings/lglaunch1.webp" alt="L-Guard Ltd" class="img-fluid w-100" />
+                            <img src="images/trainings/lglaunch1.webp" alt="L-Guard Ltd" class="img-fluid w-100" loading="lazy" decoding="async"/>
                         </a>
                         <div class="projects_section_text">
                             <span>November, 2025</span>
@@ -355,7 +355,7 @@
                     <div class="col-xl-4 col-md-6">
                         <div class="projects_section_single fade_left" data-trigerId="blogs">
                         <a href="javascript:void(0)" class="projects_section_img js-open-image" data-cursor="read <br> more">
-                            <img src="images/trainings/must.webp" alt="Helen Okereke" class="img-fluid w-100" />
+                            <img src="images/trainings/must.webp" alt="Helen Okereke" class="img-fluid w-100" loading="lazy" decoding="async"/>
                         </a>
                         <div class="projects_section_text">
                             <span>December, 2025</span>
@@ -373,7 +373,7 @@
                     <div class="col-xl-4 col-md-6">
                         <div class="projects_section_single fade_left" data-trigerId="blogs">
                         <a href="javascript:void(0)" class="projects_section_img js-open-image" data-cursor="read <br> more">
-                            <img src="images/trainings/lg1.webp" alt="L-Guard Ltd" class="img-fluid w-100" />
+                            <img src="images/trainings/lg1.webp" alt="L-Guard Ltd" class="img-fluid w-100" loading="lazy" decoding="async"/>
                         </a>
                         <div class="projects_section_text">
                             <span>December, 2025</span>
@@ -402,7 +402,7 @@
                     <div class="col-xl-4 col-md-6">
                         <div class="projects_section_single fade_left" data-trigerId="blogs">
                         <a href="javascript:void(0)" class="projects_section_img js-open-image" data-cursor="read <br> more">
-                            <img src="images/trainings/alu_award.webp" alt="Helen Okereke" class="img-fluid w-100" />
+                            <img src="images/trainings/alu_award.webp" alt="Helen Okereke" class="img-fluid w-100" loading="lazy" decoding="async"/>
                         </a>
                         <div class="projects_section_text">
                             <span>December, 2025</span>
@@ -420,7 +420,7 @@
                     <div class="col-xl-4 col-md-6">
                         <div class="projects_section_single fade_left" data-trigerId="blogs">
                         <a href="javascript:void(0)" class="projects_section_img js-open-image" data-cursor="read <br> more">
-                            <img src="images/trainings/sd3.webp" alt="Helen Okereke" class="img-fluid w-100" />
+                            <img src="images/trainings/sd3.webp" alt="Helen Okereke" class="img-fluid w-100" loading="lazy" decoding="async"/>
                         </a>
                         <div class="projects_section_text">
                             <span>July, 2025</span>
@@ -437,7 +437,7 @@
                     <div class="col-xl-4 col-md-6">
                         <div class="projects_section_single fade_left" data-trigerId="blogs">
                         <a href="javascript:void(0)" class="projects_section_img js-open-image" data-cursor="read <br> more">
-                            <img src="images/trainings/sd2.webp" alt="Helen Okereke" class="img-fluid w-100" />
+                            <img src="images/trainings/sd2.webp" alt="Helen Okereke" class="img-fluid w-100" loading="lazy" decoding="async"/>
                         </a>
                         <div class="projects_section_text">
                             <span>October, 2025</span>
@@ -454,7 +454,7 @@
                     <div class="col-xl-4 col-md-6">
                         <div class="projects_section_single fade_left" data-trigerId="blogs">
                         <a href="javascript:void(0)" class="projects_section_img js-open-image" data-cursor="read <br> more">
-                            <img src="images/trainings/sd5.webp" alt="Helen Okereke" class="img-fluid w-100" />
+                            <img src="images/trainings/sd5.webp" alt="Helen Okereke" class="img-fluid w-100" loading="lazy" decoding="async"/>
                         </a>
                         <div class="projects_section_text">
                             <span>October, 2024</span>
@@ -472,7 +472,7 @@
                     <div class="col-xl-4 col-md-6">
                         <div class="projects_section_single fade_left" data-trigerId="blogs">
                         <a href="javascript:void(0)" class="projects_section_img js-open-image" data-cursor="read <br> more">
-                            <img src="images/trainings/df.webp" alt="L-Guard Ltd" class="img-fluid w-100" />
+                            <img src="images/trainings/df.webp" alt="L-Guard Ltd" class="img-fluid w-100" loading="lazy" decoding="async"/>
                         </a>
                         <div class="projects_section_text">
                             <span>December, 2025</span>
@@ -490,7 +490,7 @@
                     <div class="col-xl-4 col-md-6">
                         <div class="projects_section_single fade_left" data-trigerId="blogs">
                         <a href="javascript:void(0)" class="projects_section_img js-open-image" data-cursor="read <br> more">
-                            <img src="images/trainings/iwd1.webp" alt="L-Guard Ltd" class="img-fluid w-100" />
+                            <img src="images/trainings/iwd1.webp" alt="L-Guard Ltd" class="img-fluid w-100" loading="lazy" decoding="async"/>
                         </a>
                         <div class="projects_section_text">
                             <span>March, 2025</span>

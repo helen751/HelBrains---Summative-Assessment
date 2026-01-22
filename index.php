@@ -38,7 +38,7 @@
                     <div class="hero-img-container">
                         <div class="img">
                                 <img src="images/helen2.png" alt="Helen Okereke" class="active">
-                                <img src="images/helen0.png" alt="Helen Okereke" class="">
+                                <img src="images/helen01.png" alt="Helen Okereke" class="">
                                 <!-- <img src="images/helen9.png" alt="Helen Okereke" class=""> -->
         
                         </div>

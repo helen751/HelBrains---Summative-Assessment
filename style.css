@@ -1777,6 +1777,16 @@ main {
   color: #fff;
 }
 
+.lazy-img { 
+  filter: blur(8px); 
+  transition: 
+  filter 300ms ease; 
+}
+.lazy-img.loaded { 
+  filter: blur(0); 
+}
+
+
 /* service end */
 /* .carousel {
     display: flex;

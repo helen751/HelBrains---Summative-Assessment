@@ -118,6 +118,24 @@ document.addEventListener("DOMContentLoaded", function() {
     setInterval(flipImage, 5000);
 });
 
+  document.addEventListener("DOMContentLoaded", () => {
+    const imgs = document.querySelectorAll("img.lazy-img[data-src]");
+
+    const io = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+
+        const img = entry.target;
+        img.src = img.dataset.src;
+        img.removeAttribute("data-src");
+        img.classList.add("loaded");
+        observer.unobserve(img);
+      });
+    }, { rootMargin: "200px 0px" });
+
+    imgs.forEach(img => io.observe(img));
+  });
+
 // Get the elements
 const toggleIcon = document.getElementById('toggle-sidebar');
 const sidebar = document.getElementById('Right_sidebar');
