@@ -147,7 +147,7 @@ body.loading {
    ANIMATED COLOR SWEEP
    ========================= */
 .preloader-text::after {
-  content: "Loading";
+  content: "Helen...";
   position: absolute;
   inset: 0;
   color: var(--colorPrimary);
