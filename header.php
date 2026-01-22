@@ -42,12 +42,6 @@
 
 <body class="loading">
     <!-- PRELOADER -->
-  <div class="preloader">
-    <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
-      <path id="preloaderPath" d="M0 2S175 1 500 1s500 1 500 1V0H0Z"></path>
-    </svg>
-    <h5 class="preloader-text">Loading</h5>
-  </div>
 
     <header>
         <nav class="navbar">

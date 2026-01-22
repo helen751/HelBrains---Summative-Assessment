@@ -629,6 +629,10 @@
 }
 
 @media (max-width: 575.99px) {
+  .service-section_heading h2 {
+        font-size: 36px;
+        line-height: 45px;
+    }
   .has-dropdown > a::after {
     content: none;
   }
@@ -720,7 +724,7 @@
 
   .hero-text h1,
   .hero-text span {
-    font-size: 48px !important;
+    font-size: 35px !important;
   }
 
   .hero-text h3 {
