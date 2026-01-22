@@ -629,6 +629,11 @@
 }
 
 @media (max-width: 575.99px) {
+  .projects_section .cv_btn{
+        position: inherit;
+        margin-bottom: 60px;
+  
+  }
   .service-section_heading h2 {
         font-size: 36px;
         line-height: 45px;
