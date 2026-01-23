@@ -15,7 +15,7 @@
                           HI, I'M HELEN!<br>
                           <span class="cd-headline rotate-1" >
                             <span class="cd-words-wrapper highlight">
-                              <b class="is-visible">Tech Founder</b>
+                              <b class="is-visible">Tech Foundern</b>
                               <b class="is-hidden">Software Engineer</b> 
                             </span>
                           </span>
