@@ -720,6 +720,10 @@ button, input, optgroup, select, textarea {
   padding-top: 80px;
 }
 
+.hero div{
+  height: 100%;
+}
+
 .hero-container {
   height: 100%;
   --bs-gutter-x: 1.5rem;

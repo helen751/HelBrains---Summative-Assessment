@@ -6,17 +6,17 @@
     <h5 class="preloader-text">Helen...</h5>
   </div>
     <section class="hero banner">
-        <div class="hero-container">
-            <div class="hero-display-flex">
-                <div class="hero-content">
+        <div class="hero-container container">
+            <div class="hero-display-flex row">
+                <div class="hero-content col-xl-6 col-lg-8">
                     <div class="hero-text">
                       
                         <h1>
                           HI, I'M HELEN!<br>
-                          <span class="cd-headline rotate-1">
+                          <span class="cd-headline rotate-1" >
                             <span class="cd-words-wrapper highlight">
                               <b class="is-visible">Tech Founder</b>
-                              <b class="is-hidden">Software Engineer</b>
+                              <b class="is-hidden">Software Engineer</b> 
                             </span>
                           </span>
                         </h1>
@@ -42,8 +42,8 @@
                 <div class="hero-frame">
                     <div class="hero-img-container">
                         <div class="img">
-                                <img src="images/helen2.png" alt="Helen Okereke" class="active">
-                                <img src="images/helen01.png" alt="Helen Okereke" class="">
+                                <img src="images/helen2.png" alt="Helen Okereke" class="active" loading="lazy" decoding="async">
+                                <img src="images/helen01.png" alt="Helen Okereke" class="" loading="lazy" decoding="async">
                                 <!-- <img src="images/helen9.png" alt="Helen Okereke" class=""> -->
         
                         </div>
@@ -79,7 +79,7 @@
       <div class="col-lg-4 col-md-6">
         <div class="single_service-section fade_left" data-trigerId="what-i-do" data-trigerid="service"  data-animate="left" data-delay="200">
           <span class="service-img">
-            <img src="images/companies/lguard.png" alt="L-Guard Ltd" class="w-100"/>
+            <img src="images/companies/lguard.png" alt="L-Guard Ltd" class="w-100" loading="lazy" decoding="async"/>
           </span>
           <h3>Co-Founder - L-Guard</h3>
           <p>
@@ -92,7 +92,7 @@
       <div class="col-lg-4 col-md-6">
         <div class="single_service-section fade_left" data-trigerId="what-i-do" data-trigerid="service" data-animate="left" data-delay="200">
           <span class="flozy">
-            <img src="images/companies/flozytech-m.png" alt="Flozytech" class="w-100" />
+            <img src="images/companies/flozytech-m.png" alt="Flozytech" class="w-100" loading="lazy" decoding="async"/>
           </span>
           <h3>Founder - Gozen(FLOZYTECH)</h3>
           <p>
@@ -105,7 +105,7 @@
       <div class="col-lg-4 col-md-6">
         <div class="single_service-section fade_left" data-trigerId="what-i-do" data-trigerid="service" data-animate="left" data-delay="200">
           <span style="width: 170px;">
-            <img src="images/companies/helen-s.png" alt="Helen Okereke - Tech Public Speaker" class="w-100" />
+            <img src="images/companies/helen-s.png" alt="Helen Okereke - Tech Public Speaker" class="w-100" loading="lazy" decoding="async"/>
           </span>
           <h3>Tech Public Speaker</h3>
           <p>
@@ -153,7 +153,7 @@ and empowering young people to build with purpose.
           </div>
           <div class="col-xxl-4 col-lg-6 col-xl-6" data-animate="right" data-delay="300">
             <div class="about-me_img fade_right" data-trigerid="about" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;" >
-              <img src="images/H1.png" alt="Helen Okereke" class="img-fluid w-100">
+              <img src="images/H1.png" alt="Helen Okereke" class="img-fluid w-100" loading="lazy" decoding="async">
               <div class="about-me_img_text">
                 <i class="fa fa-chart-pie"></i>
                 <div class="about-me_content">
@@ -398,7 +398,7 @@ and empowering young people to build with purpose.
               <a href="projects" class="projects_section_img" data-cursor="read <br> more" >
                 <img
                   src="images/trainings/devfest1.webp" alt="Helen Okereke" class="img-fluid w-100"
-                />
+                loading="lazy" decoding="async"/>
               </a>
               <div class="projects_section_text">
                 <span>December, 2022</span>
@@ -420,7 +420,7 @@ and empowering young people to build with purpose.
                 data-cursor="read <br> more"
               >
                 <img
-                  src="images/trainings/us2.webp" alt="Helen Okereke" class="img-fluid w-100"
+                  src="images/trainings/us2.webp" alt="Helen Okereke" class="img-fluid w-100" loading="lazy" decoding="async"
                 />
               </a>
               <div class="projects_section_text">
@@ -441,7 +441,7 @@ and empowering young people to build with purpose.
               <a href="projects" class="projects_section_img" data-cursor="read <br> more" >
                 <img
                   src="images/trainings/xpai.webp" alt="Helen Okereke" class="img-fluid w-100"
-                />
+                loading="lazy" decoding="async"/>
               </a>
               <div class="projects_section_text">
                 <span>October, 2024</span>

@@ -54,10 +54,15 @@ $headers[] = "From: Portfolio Contact <{$from}>";
 $headers[] = "Reply-To: {$name} <{$email}>";
 $headers[] = "X-Mailer: PHP/" . phpversion();
 
-$sent = @mail($to, $subject, $body, implode("\r\n", $headers));
+$sent = mail($to, $subject, $body, implode("\r\n", $headers));
 
 if ($sent) {
   echo json_encode(['success' => true]);
 } else {
-  echo json_encode(['success' => false, 'error' => 'Server could not send email (mail() failed).']);
+  $err = error_get_last();
+  echo json_encode([
+    'success' => false,
+    'error' => 'mail() failed',
+    'detail' => $err ? $err['message'] : 'No PHP error details'
+  ]);
 }
