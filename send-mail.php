@@ -32,7 +32,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 }
 
 // ✅ Your email here
-$to = "okerekehelenugoeze@gmail.com";
+$to = "helen.okereke@lguard.tech";
 $subject = "New Contact Message from Portfolio";
 
 // Build message
@@ -45,13 +45,14 @@ $body =
 
 // Best-practice headers (helps deliverability)
 $domain = $_SERVER['SERVER_NAME'] ?? 'localhost';
-$from = "no-reply@{$domain}";
+$fromEmail = "helen.okereke@lguard.tech";
+$fromName  = "My Portfolio";
 
 $headers = [];
 $headers[] = "MIME-Version: 1.0";
 $headers[] = "Content-Type: text/plain; charset=UTF-8";
-$headers[] = "From: Portfolio Contact <{$from}>";
-$headers[] = "Reply-To: {$name} <{$email}>";
+$headers[] = "From: {$fromName} <{$fromEmail}>";
+$headers[] = "Reply-To: {$name} <{$email}>"; // 👈 sender goes here
 $headers[] = "X-Mailer: PHP/" . phpversion();
 
 $sent = mail($to, $subject, $body, implode("\r\n", $headers));
