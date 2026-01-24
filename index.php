@@ -25,7 +25,7 @@
                     I’m a software engineer, IoT product builder, and co-founder of L-Guard, a life-saving mobility solution currently piloting with public and private partners across East Africa.</p>
                         <ul>
                             <li>
-                                <a class="cv_btn" href="#">
+                                <a class="cv_btn" onclick="cv_message();">
                                 Download CV
                                 <i class="fa-solid fa-download" aria-hidden="true"></i>
                                 </a>
@@ -485,3 +485,12 @@ SUBSCRIBE END
 =================================-->
 
 <?php include 'footer.php'; ?>
+<script>
+  function cv_message() {
+    swal.fire({
+      icon: "info",
+      title: "CV Availaible Upon Request",
+      text: "To download my CV, please send a request via the contact form or email me directly at helen.okereke@lguard.tech"
+      })
+}
+  </script>
