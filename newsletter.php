@@ -24,7 +24,7 @@ $postData = http_build_query([
     'key'   => 'HELBRAINS_SERVER_ONLY_KEY'
 ]);
 
-$ch = curl_init('https://script.google.com/macros/s/AKfycbxTaagivo-rPlyzlhKg0-rHH9WNCJFB5a4T4liZXUE-FHgteJdP2RqfHQk8ka9S2Mkd/exec');
+$ch = curl_init('https://script.google.com/macros/s/AKfycbxg6XT2PJzRIntvDmkwOJSN0TsGj_CSfGAAq6xjwpVGB4ce0G9B7L_56TNVcAW-99TI/exec');
 
 curl_setopt_array($ch, [
     CURLOPT_RETURNTRANSFER => true,
