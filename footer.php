@@ -169,26 +169,33 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.getElementById("newsletterForm").addEventListener("submit", async (e) => {
-  e.preventDefault();
+  e.preventDefault(); // 🔥 VERY IMPORTANT
 
   const emailInput = document.getElementById("newsletterEmail");
   const email = emailInput.value.trim();
 
-  // ✅ Client-side validation
   if (!email) {
-    alert("Please enter your email address.");
+    Swal.fire({
+      icon: "warning",
+      title: "Missing email",
+      text: "Please enter your email address."
+    });
     emailInput.focus();
     return;
   }
 
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    alert("Please enter a valid email address.");
+    Swal.fire({
+      icon: "error",
+      title: "Invalid email",
+      text: "Please enter a valid email address."
+    });
     emailInput.focus();
     return;
   }
 
   try {
-    const res = await fetch("/newsletter.php", {
+    const response = await fetch("/newsletter.php", {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded"
@@ -196,20 +203,31 @@ document.getElementById("newsletterForm").addEventListener("submit", async (e) =
       body: new URLSearchParams({ email })
     });
 
-    const data = await res.json();
+    const data = await response.json();
 
     if (data.success) {
-      alert(data.message || "Subscribed successfully!");
+      Swal.fire({
+        icon: "success",
+        title: "Subscribed!",
+        text: data.message || "You have been added to the newsletter."
+      });
       emailInput.value = "";
     } else {
-      alert(data.message || "Could not subscribe. Please try again.");
+      Swal.fire({
+        icon: "error",
+        title: "Subscription failed",
+        text: data.message || "Please try again."
+      });
     }
 
-  } catch (err) {
-    alert("Network error. Please try again later.");
+  } catch (error) {
+    Swal.fire({
+      icon: "error",
+      title: "Network error",
+      text: "Please try again later."
+    });
   }
 });
-</script>
 
 </script>
 
