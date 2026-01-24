@@ -1,85 +1,52 @@
 <?php
-// Always return JSON
-header('Content-Type: application/json; charset=utf-8');
+header('Content-Type: application/json');
 
-// Only allow POST
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
-    echo json_encode([
-        'success' => false,
-        'message' => 'Invalid request method'
-    ]);
+    echo json_encode(['success' => false, 'message' => 'Invalid request method']);
     exit;
 }
 
-// Get and sanitize email
 $email = strtolower(trim($_POST['email'] ?? ''));
 
-if ($email === '') {
-    echo json_encode([
-        'success' => false,
-        'message' => 'Email is required'
-    ]);
+if (!$email) {
+    echo json_encode(['success' => false, 'message' => 'Email is required']);
     exit;
 }
 
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    echo json_encode([
-        'success' => false,
-        'message' => 'Invalid email address'
-    ]);
+    echo json_encode(['success' => false, 'message' => 'Invalid email address']);
     exit;
 }
 
-// Google Apps Script endpoint
-$endpoint = 'https://script.google.com/macros/s/AKfycbwhPKJMNoixou4_LeIwON05tdnMFjvGtnlZdMImbjyqA6CYcKC2U-HifUrc9sr5eZQP/exec';
+$postData = http_build_query([
+    'email' => $email,
+    'key'   => 'HELBRAINS_SERVER_ONLY_KEY'
+]);
 
-// Payload sent to Google
-$payload = [
-    'email'  => $email,
-    'source' => 'Website Newsletter',
-    'key'    => 'HELBRAINS_SERVER_ONLY_KEY'
-];
-
-// Init cURL
-$ch = curl_init($endpoint);
+$ch = curl_init('https://script.google.com/macros/s/AKfycbxTaagivo-rPlyzlhKg0-rHH9WNCJFB5a4T4liZXUE-FHgteJdP2RqfHQk8ka9S2Mkd/exec');
 
 curl_setopt_array($ch, [
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_POST           => true,
-    CURLOPT_POSTFIELDS     => http_build_query($payload), // IMPORTANT
+    CURLOPT_POSTFIELDS     => $postData,
     CURLOPT_HTTPHEADER     => [
         'Content-Type: application/x-www-form-urlencoded'
     ],
-    CURLOPT_FOLLOWLOCATION => true,   // 🔥 REQUIRED FOR GOOGLE
-    CURLOPT_TIMEOUT        => 10,
-    CURLOPT_SSL_VERIFYPEER => true
+    CURLOPT_FOLLOWLOCATION => true,
+    CURLOPT_TIMEOUT        => 10
 ]);
 
 $response = curl_exec($ch);
 
-// cURL-level error
 if ($response === false) {
-    echo json_encode([
-        'success' => false,
-        'message' => 'Network error. Please try again later.',
-        'detail'  => curl_error($ch)
-    ]);
-    curl_close($ch);
+    echo json_encode(['success' => false, 'message' => 'Network error']);
     exit;
 }
 
-$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 curl_close($ch);
 
-// Google did not accept request
-if ($httpCode !== 200) {
-    echo json_encode([
-        'success' => false,
-        'message' => 'Subscription service error'
-    ]);
-    exit;
-}
-
-// Success (pass Google response through)
+// pass Google response directly
 echo $response;
+
+?>
