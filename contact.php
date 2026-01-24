@@ -1,5 +1,5 @@
 <?php include 'header.php'; ?>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
  <section class="projects_breadcrumb banner" style="background: url(images/trainings/devfest2.webp)">
       <div class="container">
@@ -138,7 +138,7 @@
         Swal.fire({
           icon: "success",
           title: "Message sent!",
-          text: "Thanks for reaching out — I’ll get back to you soon.",
+          text: "Thanks for reaching out. I’ll get back to you within 24hrs.",
         });
         form.reset();
       } else {

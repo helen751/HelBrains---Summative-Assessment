@@ -470,8 +470,8 @@ and empowering young people to build with purpose.
             <div class="col-xl-6 col-lg-8 col-md-10 m-auto">
               <div class="news_subscribe_text">
                 <h3 class="has-animation" data-animate="up" data-delay="200">SUBSCRIBE TO MY NEWSLETTER</h3>
-                <form action="#" class="">
-                  <input type="text" placeholder="Enter Your Email" />
+                <form action="#" class="" id="newsletterForm">
+                  <input type="text" placeholder="Enter Your Email" name="email"  />
                   <button type="submit" class="cv_btn">Send now</button>
                 </form>
               </div>

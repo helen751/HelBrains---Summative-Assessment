@@ -80,6 +80,116 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Bootstrap 5.3.3 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const headerForm = document.querySelector(
+    'form[aria-label="Contact form"]'
+  );
+
+  if (!headerForm) return;
+
+  headerForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const name = headerForm.querySelector('input[name="your-name"]').value.trim();
+    const email = headerForm.querySelector('input[name="your-email"]').value.trim();
+    const message = headerForm.querySelector('textarea[name="your-subject"]').value.trim();
+
+    // Basic validation
+    if (!name || !email || !message) {
+      Swal.fire({
+        icon: "warning",
+        title: "Missing information",
+        text: "Please fill in all required fields.",
+      });
+      return;
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      Swal.fire({
+        icon: "error",
+        title: "Invalid email",
+        text: "Please enter a valid email address.",
+      });
+      return;
+    }
+
+    const submitBtn = headerForm.querySelector(".submit_btn");
+    const spinner = headerForm.querySelector(".wpcf7-spinner");
+
+    submitBtn.disabled = true;
+    submitBtn.value = "Sending...";
+
+    if (spinner) spinner.style.display = "inline-block";
+
+    try {
+      const response = await fetch("/send-mail.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          phone: "", // header form has no phone
+          message: message,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        Swal.fire({
+          icon: "success",
+          title: "Message sent!",
+          text: "Thanks for reaching out. I’ll get back to you shortly.",
+        });
+
+        headerForm.reset();
+      } else {
+        throw new Error(result.error || "Mail sending failed");
+      }
+    } catch (err) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops!",
+        text: "Could not send your message. Please try again later.",
+      });
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.value = "Send Message";
+
+      if (spinner) spinner.style.display = "none";
+    }
+  });
+});
+
+document.getElementById("newsletterForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const email = document.getElementById("newsletterEmail").value.trim();
+  if (!email) return;
+
+  try {
+    const res = await fetch("/newsletter.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({ email })
+    });
+
+    const data = await res.json();
+    alert(data.message);
+
+  } catch {
+    alert("Could not subscribe. Please try again.");
+  }
+});
+</script>
+
 </body>
 
    
