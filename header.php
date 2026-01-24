@@ -115,13 +115,13 @@
                         <form  method="post" aria-label="Contact form" novalidate="novalidate" data-status="init">
 
                             <span class="form-label" data-name="your-name">
-                            <input size="40" aria-required="true" aria-invalid="false" placeholder="Your Name" value="" type="text" name="your-name">
+                            <input size="40" aria-required="true" aria-invalid="false" placeholder="Your Name" value="" type="text" name="your-name" required>
                             </span>
                             <span class="form-label" data-name="your-email">
-                            <input size="40" autocomplete="email" aria-required="true" aria-invalid="false" placeholder="Your Email" value="" type="email" name="your-email">
+                            <input size="40" autocomplete="email" aria-required="true" aria-invalid="false" placeholder="Your Email" value="" type="email" name="your-email" required>
                             </span>
                             <span class="form-label" data-name="your-subject">
-                            <textarea cols="10" rows="5"aria-invalid="false" placeholder="Message" name="your-subject"></textarea>
+                            <textarea cols="10" rows="5"aria-invalid="false" placeholder="Message" name="your-subject" required></textarea>
                             </span>
                             <input class="submit_btn" type="submit" value="Send Message">
                             <span class="wpcf7-spinner"></span>
