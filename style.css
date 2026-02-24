@@ -94,7 +94,7 @@ a {
 /* Lock scroll while loading */
 body.loading {
   overflow: hidden;
-  height: 100vh;
+  height: 100dvh;
 }
 
 /* =========================
@@ -716,7 +716,7 @@ button, input, optgroup, select, textarea {
   background-position: center !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
-  height: 100vh;
+  height: 100dvh;
   padding-top: 80px;
 }
 
