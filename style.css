@@ -29,10 +29,10 @@
 html,
 body {
   height: 100%;
+  overflow-x: hidden !important;
 }
 
 body {
-  overflow-x: hidden !important;
   scroll-behavior: smooth;
   font-size: 16px;
   font-weight: 400;
@@ -94,7 +94,7 @@ a {
 /* Lock scroll while loading */
 body.loading {
   overflow: hidden;
-  height: 100dvh;
+  min-height: 100vh;
 }
 
 /* =========================
@@ -716,7 +716,7 @@ button, input, optgroup, select, textarea {
   background-position: center !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
-  height: 100dvh;
+  min-height: 100vh;
   padding-top: 80px;
 }
 
