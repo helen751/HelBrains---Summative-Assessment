@@ -148,7 +148,7 @@ and empowering young people to build with purpose.
 
                 My work sits at the intersection of technology, business, and social impact, with a focus on building ventures that save lives and scale sustainably.
               </p>
-              <a class="cv_btn" href="#">Book Mentorship <i class="fa-solid fa-address-book"></i></a>
+              <a class="cv_btn" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ128ECyeszEAbIYe7AxrgoCO6i_dX5vcvhVI1d35Z5W28B7ruo31UZCWLwCemOeKPeav7Ja7C7P?gv=true">Book Mentorship <i class="fa-solid fa-address-book"></i></a>
             </div>
           </div>
           <div class="col-xxl-4 col-lg-6 col-xl-6" data-animate="right" data-delay="300">
@@ -158,7 +158,7 @@ and empowering young people to build with purpose.
                 <i class="fa fa-chart-pie"></i>
                 <div class="about-me_content">
                   <h4>Working Hours</h4>
-                  <p>8am - 5pm</p>
+                  <p>10am - 5pm</p>
                 </div>
               </div>
             </div>
