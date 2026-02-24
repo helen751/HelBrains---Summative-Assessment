@@ -12,7 +12,7 @@
                     <div class="hero-text">
                       
                         <h1>
-                          HI, I'M HELENo!<br>
+                          HI, I'M HELEN!<br>
                           <span class="cd-headline rotate-1" >
                             <span class="cd-words-wrapper highlight">
                               <b class="is-visible">Tech Founder</b>

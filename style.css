@@ -717,7 +717,7 @@ button, input, optgroup, select, textarea {
   background-position: center !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
-  min-height: 100vh;
+  min-height: calc(100dvh - 80px);
   padding-top: 80px;
 }
 
