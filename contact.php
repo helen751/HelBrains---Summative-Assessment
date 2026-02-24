@@ -11,7 +11,7 @@
                 <li>
                   <a href="index" class="text_hover_animaiton">Home</a>
                 </li>
-                <li><a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ128ECyeszEAbIYe7AxrgoCO6i_dX5vcvhVI1d35Z5W28B7ruo31UZCWLwCemOeKPeav7Ja7C7P?gv=true">Book a Meeting</a></li>
+                <li><a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ128ECyeszEAbIYe7AxrgoCO6i_dX5vcvhVI1d35Z5W28B7ruo31UZCWLwCemOeKPeav7Ja7C7P?gv=true" target="_blank">Book a Meeting</a></li>
               </ul>
             </div>
           </div>
